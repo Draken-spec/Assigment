@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        justify-content: center;
+        text-align: center;
+    }
+
+    form {
+        border: 1px solid rgb(208, 201, 201);
+        background-color: rgb(234, 234, 234);
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-top: 45px;
+        padding-bottom: 30px;
+        border-radius: 12px;
+    }
+
+    input {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 8px 0;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+</style>
+
+<body>
+    <h1>Form</h1>
+    <form>
+        <input type="number" placeholder="Enter Number" id="number"><br><br>
+        <input type="number" placeholder="Enter Percentage" id="prcnt"><br><br>
+        <p id="ans">Percentage =</p>
+
+        <button type="button" onclick="event.preventDefault(); p();">Submit</button>
+    </form>
+
+    <script>
+        function p() {
+            var num = document.getElementById("number").value;
+            var prctn = document.getElementById("prcnt").value;
+
+            if (num && prctn) {
+                var decimal = prctn / 100;
+                var percentage = num * decimal;
+
+                document.getElementById("ans").innerHTML = "Percentage = " + percentage;
+            }
+            else {
+                alert("Please enter both number and percentage");
+            }
+        }
+    </script>
+</body>
+
+</html>
